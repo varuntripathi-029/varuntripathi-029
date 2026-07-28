@@ -5,7 +5,7 @@
   <img src="https://camo.githubusercontent.com/46e030682453567038c22cc4273410008f745ac22cd79c166753a3dffc94c73c/68747470733a2f2f6769746875622d70726f66696c652d73756d6d6172792d63617264732e76657263656c2e6170702f6170692f63617264732f70726f66696c652d64657461696c73" alt="Profile Card" width="560" />
 </p>
 
-I'm Varun Tripathi — a final-year ECE student at IIIT Nagpur, actively looking for internship opportunities. I build things that ship: backend services, frontend apps, and automation tools. I'm passionate about full-stack development, distributed systems, and making impactful, production-ready code.
+I'm Varun Tripathi — a final-year ECE student at IIIT Nagpur, actively looking for internship opportunities. I build things that ship: backend services, frontend apps, automation tools, and generative-AI-powered utilities. I love bringing practical ML/AI into developer tooling and production services.
 
 <!-- Top snake (python head + contribution snake) -->
 <p align="center">
@@ -19,9 +19,9 @@ I'm Varun Tripathi — a final-year ECE student at IIIT Nagpur, actively looking
 ## About me
 
 - 🎓 Final-year student, Electronics & Communications (ECE), IIIT Nagpur
-- 🔎 Seeking: Internship roles (Software Engineering, Backend, SDE Intern)
-- 💡 Interests: Distributed systems, backend architecture, cloud-native apps, data processing, and developer tooling
-- 📫 Reach me: (add email / LinkedIn / portfolio link here if you want it displayed)
+- 🔎 Seeking: Internship roles (Software Engineering, Backend, ML/GenAI Intern)
+- 💡 Interests: Distributed systems, backend architecture, cloud-native apps, generative AI, retrieval-augmented systems, and developer tooling
+- 📫 Reach me: [varun.tripathi2004@gmail.com](mailto:varun.tripathi2004@gmail.com) • [LinkedIn](https://www.linkedin.com/in/varun-tripathi-bb338a295/)
 
 <!-- mid snake to give crawling effect -->
 <p align="center">
@@ -32,9 +32,10 @@ I'm Varun Tripathi — a final-year ECE student at IIIT Nagpur, actively looking
 ## Skills & Tech Stack (inferred from my repos)
 
 - Languages: Java • Python • JavaScript • TypeScript • Shell
-- Frameworks / Libraries: Spring Boot, React (TypeScript), Node.js
-- Tools & Platforms: Docker, Git, REST APIs, JWT, Google OAuth, Hadoop (Dockerized HDFS/YARN), SQL
-- Areas: Backend services, web frontends, logging & analytics, automation
+- GenAI / ML: Retrieval-augmented workflows, prompt engineering, LLM-based agents, RAG pipelines, embeddings and vector search
+- Frameworks / Libraries: Spring Boot, React (TypeScript), Node.js, popular Python ML stacks
+- Tools & Platforms: Docker, Git, REST APIs, JWT, Google OAuth, Hadoop (Dockerized HDFS/YARN), QuickChart
+- Areas: Backend services, web frontends, logging & analytics, automation, generative-AI tools
 
 ---
 
@@ -58,8 +59,11 @@ Here are some standout projects from my GitHub — short tech stacks and what I 
 - [socialmedia_fe](https://github.com/varuntripathi-029/socialmedia_fe) — Frontend for the social app built with TypeScript and React. (TypeScript, React)
 - [simple-weather-api](https://github.com/varuntripathi-029/simple-weather-api) — A learning Spring Boot REST API that serves weather data. (Java, Spring Boot)
 - [hadoop-docker-single-node](https://github.com/varuntripathi-029/hadoop-docker-single-node) — Dockerized single-node Hadoop (HDFS + YARN + MapReduce) for reproducible experiments in distributed storage/compute. (Shell, Docker, Hadoop)
-- [java_logs_analyzer](https://github.com/varuntripathi-029/java_logs_analyzer) — Tools to parse and analyze Java application logs to extract insights. (Java)
-- [legal_clause_analyzer-be](https://github.com/varuntripathi-029/legal_clause_analyzer-be) — Python backend for legal clause analysis and retrieval tasks (NLP). (Python, NLP)
+- [log-analyzer](https://github.com/varuntripathi-029/log-analyzer) — Tools to parse and analyze logs and build analytics pipelines; useful for monitoring and root-cause analysis. (Java/analysis tooling)
+- [remote-agent](https://github.com/varuntripathi-029/remote-agent) — Prototype agent and automation tooling that integrates external APIs, orchestrates workflows, and experiments with LLM-driven actions. (TypeScript, agents, APIs)
+- [legal_clause_analyzer-be](https://github.com/varuntripathi-029/legal_clause_analyzer-be) — Python backend for legal clause analysis and retrieval tasks (NLP, RAG). (Python, NLP)
+- [RetrivalOnly](https://github.com/varuntripathi-029/RetrivalOnly) — Retrieval-focused tooling (RAG experiments, embeddings, vector search) to power LLM augmentation. (Python, vectors)
+- [ETA (group project)](https://github.com/varuntripathi-029) — Group project (ETA) — tell me the repo link or a short description and I’ll replace this placeholder with a proper entry.
 - [MA_frontend](https://github.com/varuntripathi-029/MA_frontend) & [MA_backend](https://github.com/varuntripathi-029/MA_backend) — Full-stack mini app demonstrating end-to-end dev (TypeScript frontend, Python backend).
 - [new_portfolio](https://github.com/varuntripathi-029/new_portfolio) & [portfolio](https://github.com/varuntripathi-029/portfolio) — Portfolio sites showcasing projects, demos and design experiments. (JavaScript / React)
 
@@ -75,7 +79,7 @@ For more projects, see my repositories on my profile — I experiment across Jav
 
 ## What I'm looking for
 
-I thrive in teams that ship fast and learn faster. I'm eager to contribute to backend, cloud, or full-stack intern roles where I can apply my Java and Python experience, work with scalable systems, and learn production best practices.
+I thrive in teams that ship fast and learn faster. I'm eager to contribute to backend, cloud, GenAI, or full-stack intern roles where I can apply my Java and Python experience, work with scalable systems, and learn production best practices.
 
 Would love to expand my GitHub's access to a peak organisation — bring me onto a team where I can grow, build, and leave a mark. 🚀
 
