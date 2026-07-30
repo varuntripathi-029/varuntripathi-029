@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=230&color=0:022C22,45:064E3B,100:059669&text=Varun%20Tripathi&fontColor=ECFDF5&fontSize=54&fontAlignY=34&desc=Software%20Engineer%20%20%7C%20%20AI%20%2F%20ML%20Engineer%20%20%7C%20%20Backend%20%26%20Distributed%20Systems&descAlignY=53&descSize=16&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&v=2&height=230&color=0:022C22,45:064E3B,100:059669&text=Varun%20Tripathi&fontColor=ECFDF5&fontSize=54&fontAlignY=34&desc=Software%20Engineer%20%20%7C%20%20AI%20%2F%20ML%20Engineer%20%20%7C%20%20Backend%20%26%20Distributed%20Systems&descAlignY=53&descSize=16&animation=fadeIn" width="100%" />
 
 <a href="https://github.com/varuntripathi-029">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=34D399&center=true&vCenter=true&width=780&height=60&lines=Software+Engineer+%7C+AI+%2F+ML+Engineer;Backend+Systems+%E2%80%A2+Distributed+Architecture;RAG+Pipelines+%E2%80%A2+LLM+Agents+%E2%80%A2+Vector+Search;Full+Stack+Product+Engineering+at+Scale" alt="Typing SVG" />
@@ -79,6 +79,26 @@ I ship **full stack**, because a system nobody can use is not a system: React, N
 **Cloud, DevOps & Tooling**
 
 <img src="https://skillicons.dev/icons?i=docker,aws,vercel,git,github,githubactions,maven,linux,postman,idea&theme=dark" alt="Cloud DevOps and Tooling" />
+
+</div>
+
+---
+
+## Backend & Systems Expertise
+
+<div align="center">
+
+| Domain | Proficiency | Details |
+| :--- | :---: | :--- |
+| **API & Service Architecture** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Spring Boot 3 and FastAPI services with strict layer separation — controllers hold no business logic, services never parse, parsers never perform I/O — plus DTO records, centralized exception handling, and configured CORS |
+| **Databases & Data Modeling** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | PostgreSQL with JPA/Hibernate and `asyncpg`, N+1 query elimination, DB-level uniqueness as a concurrency primitive, Alembic migrations run at container boot, PostGIS spatial indexing |
+| **Caching & Redis** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Cache-aside read paths with proactive invalidation and TTLs, atomic `INCR`/`EXPIRE` fixed-window rate limiting, and TTL-bounded multi-worker session stores — **~95% fewer read transactions** |
+| **Concurrency & Throughput** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Bounded-queue backpressure, dedicated ingestion threads feeding N-worker pools, race-condition hardening under simultaneous writes — sustaining **~50,000 events/second** on the JVM |
+| **Authentication & Authorization** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | JWT issuance and validation, Google and GitHub OAuth, bcrypt credential storage, brute-force rate limiting in a custom `OncePerRequestFilter`, and per-service RBAC verified with real 401/403 tests |
+| **Reliability & Failure Design** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | Single-point-of-failure removal via localized cache failover to the primary datastore, deterministic fallbacks when an LLM or upstream API is unavailable, and health checks that report real loaded state |
+| **Distributed & Microservices** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | 10 independently deployable FastAPI services behind one routing front door, WebSocket relay topologies with reverse tunnels, and Hadoop HDFS/YARN/MapReduce clusters |
+| **DevOps & Deployment** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | Docker multi-stage builds and self-migrating entrypoints, GitHub Actions, and production deploys across Vercel, Railway, Render, Zoho Catalyst AppSail, Supabase, Upstash, and Neon |
+| **Testing & Code Quality** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | JUnit 5 and pytest suites (122 passing across one microservice fleet), pure-function parsers testable without a network, and documented trade-off retrospectives per repository |
 
 </div>
 
@@ -399,13 +419,21 @@ Maintaining a public portfolio of production-oriented systems spanning backend a
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=varuntripathi-029&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=34D399&text_color=C9D1D9&icon_color=10B981&ring_color=059669" height="180" alt="GitHub Stats" />
-<img src="https://streak-stats.demolab.com?user=varuntripathi-029&hide_border=true&background=0D1117&stroke=30363D&ring=10B981&fire=34D399&currStreakLabel=34D399&sideLabels=C9D1D9&currStreakNum=ECFDF5&sideNums=C9D1D9&dates=8B949E" height="180" alt="GitHub Streak" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=varuntripathi-029&theme=github_dark" width="88%" alt="Profile Summary" />
 
 <br />
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=varuntripathi-029&layout=compact&langs_count=10&hide_border=true&bg_color=0D1117&title_color=34D399&text_color=C9D1D9" height="180" alt="Top Languages" />
-<img src="https://github-readme-stats.vercel.app/api/wakatime?username=varuntripathi-029&layout=compact&hide_border=true&bg_color=0D1117&title_color=34D399&text_color=C9D1D9" height="180" alt="Coding Activity" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=varuntripathi-029&theme=github_dark" height="200" alt="GitHub Stats" />
+<img src="https://github-readme-streak-stats.herokuapp.com?user=varuntripathi-029&hide_border=true&background=0D1117&stroke=30363D&ring=10B981&fire=34D399&currStreakLabel=34D399&sideLabels=C9D1D9&currStreakNum=ECFDF5&sideNums=C9D1D9&dates=8B949E" height="200" alt="GitHub Streak" />
+
+<br />
+
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=varuntripathi-029&theme=github_dark" height="200" alt="Top Languages by Repository" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=varuntripathi-029&theme=github_dark" height="200" alt="Most Committed Languages" />
+
+<br />
+
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=varuntripathi-029&theme=github_dark&utcOffset=5.5" height="200" alt="Productive Time" />
 
 <br />
 
@@ -427,7 +455,7 @@ Maintaining a public portfolio of production-oriented systems spanning backend a
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=varuntripathi-029&theme=matrix&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8&title=Repositories,Commits,PullRequest,Issues,Stars,Followers,MultiLanguage" width="100%" alt="GitHub Trophies" />
+<img src="https://github-trophies.vercel.app/?username=varuntripathi-029&theme=matrix&no-frame=true&no-bg=true&column=7&margin-w=8&margin-h=8&title=Repositories,Commits,PullRequest,Issues,Stars,Followers,MultiLanguage" width="100%" alt="GitHub Trophies" />
 
 </div>
 
@@ -496,6 +524,6 @@ open_to:
 
 > **Systems are judged by how they fail, not by how they demo.**
 
-<img src="https://capsule-render.vercel.app/api?type=waving&section=footer&height=160&color=0:059669,55:064E3B,100:022C22&fontColor=ECFDF5&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&v=2&section=footer&height=160&color=0:059669,55:064E3B,100:022C22&fontColor=ECFDF5&animation=fadeIn" width="100%" />
 
 </div>
