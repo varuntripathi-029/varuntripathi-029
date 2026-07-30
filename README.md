@@ -278,6 +278,8 @@ Maintaining a public portfolio of production-oriented systems spanning backend a
 
 | Recognition | Details |
 | :--- | :--- |
+| **ET AI Hackathon — Finalist** | Selected as a **finalist** among competing teams for an applied AI build, judged on technical depth, execution, and real-world viability |
+| **Zoho Catalyst Hackathon — Finalist** | Advanced to the **finals** building on Zoho Catalyst, delivering a working cloud-deployed product within the competition window |
 | **LeetCode Knight** | Knight badge on LeetCode with **307 problems solved** — sustained contest rating in the top competitive tier |
 | **Open Source Footprint** | 25+ public repositories spanning backend, AI/ML, distributed systems, and full stack — organically starred and forked by other developers |
 | **Performance Engineering** | Delivered a ~100× embedding latency reduction and ~6–8× end-to-end analysis speedup by replacing a hosted API with CPU-local inference |
