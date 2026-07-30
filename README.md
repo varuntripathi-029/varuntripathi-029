@@ -37,11 +37,13 @@
 
 ## About
 
-I am an **AI/ML engineer** who treats a model as one component in a system rather than the system itself. I build retrieval-augmented pipelines end to end — document ingestion and OCR, CPU-local embeddings, FAISS vector search, streaming per-clause inference — and I hold generated output to the same standard as any other output: **every claim must cite evidence that actually exists**. In production that means citations re-validated for existence *and* polarity after generation, hybrid confidence calibrated from vector similarity and model certainty, deterministic rule engines that own the score while the LLM only narrates, and a fallback path for when the model is unavailable. I have shipped this across legal clause compliance, agent-readiness scoring for the web, ConvLSTM air quality forecasting, and LangGraph multi-agent orchestration.
+Ask an LLM to review a contract. It will cite a clause that does not exist.
 
-That AI work is only deployable because of the **software engineering** underneath it. I design Java 21 / Spring Boot 3 and FastAPI services on PostgreSQL and Redis, and I optimize against numbers rather than intuition: cache-aside read paths that cut database transactions by ~95%, atomic Redis rate limiting validating in under 3 ms, database-level constraints that defeat concurrent write races, bounded-queue backpressure sustaining ~50,000 events/second on the JVM, and localized failover so a cache outage degrades a service instead of taking it down. Ten independently deployable microservices, each with its own RBAC and test suite, is a normal shape of project for me.
+That failure mode is why I build **AI/ML** systems where the model never gets the last word. I write retrieval pipelines end to end, from OCR and document ingestion through CPU-local embeddings, FAISS vector search, and per-clause inference that streams back as each verdict completes. Generated output is then verified rather than trusted: citations are re-validated after generation for existence **and** polarity, so the cited path has to exist and the value sitting there has to actually support the claim. Confidence is calibrated from vector similarity blended with model certainty. A deterministic rule engine owns the score, and the LLM narrates what that engine already found — across legal clause compliance, agent-readiness scoring, ConvLSTM air quality forecasting, and LangGraph multi-agent orchestration.
 
-I ship **full stack**, because a system nobody can use is not a system: React, Next.js, and TypeScript front ends deployed alongside containerized backends on Vercel, Railway, Render, and Zoho Catalyst. And I approach every repository with a **product engineering mindset** — the roadmap, the trade-off log, the "here is exactly what broke and how it was fixed" retrospective — because engineering judgment is only visible when the reasoning is written down.
+None of that ships without the unglamorous half, which is the half I actually enjoy. I design Java 21 / Spring Boot 3 and FastAPI services on PostgreSQL and Redis, tuned against measurements rather than instinct: cache-aside reads that cut database transactions by ~95%, rate limiting that resolves in under 3 ms without touching Postgres, database-level constraints that settle write races the service layer kept losing, and bounded-queue backpressure holding ~50,000 events/second on the JVM. Ten independently deployable microservices, each with its own RBAC and test suite, is a normal project shape for me. I have also watched Redis go down mid-request and the service fall through to Postgres without a 500, which is the only reason I trust a cache in the first place.
+
+I ship **full stack**, because a system nobody can open is not a system: React, Next.js, and TypeScript front ends deployed beside containerized backends on Vercel, Railway, Render, and Zoho Catalyst. Every repository carries its own retrospective — what broke, why, and what fixed it. My worst bugs are public, and that is deliberate.
 
 <div align="center">
 
@@ -102,8 +104,8 @@ I ship **full stack**, because a system nobody can use is not a system: React, N
 | **Retrieval-Augmented Generation** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | End-to-end RAG over legal corpora — chunking, FAISS L2 indexing, hybrid confidence calibration blending vector similarity (40%) with LLM certainty (60%) |
 | **Embeddings & Vector Search** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | FastEmbed `BAAI/bge-base-en-v1.5` (768-dim) running CPU-local at 8–15 ms/request, replacing a hosted embedding API at ~100× lower latency and zero token cost |
 | **LLM Application Engineering** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Groq / Llama-3.3-70B pipelines with SSE token streaming, concurrent per-clause inference, structured output contracts, and bounded session state in Redis |
-| **Grounding & Hallucination Control** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Every model claim must cite a real JSON path into a deterministic profile; citations re-validated post-generation for existence **and** polarity, with violations logged rather than silently trusted |
-| **LangChain & Hugging Face Ecosystem** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | Chain and pipeline composition, model and tokenizer integration, prompt templating, and deployment-oriented GenAI application structure |
+| **Grounding & Hallucination Control** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Every claim must cite a JSON path that exists — citations re-checked after generation for existence **and** polarity, with violations logged rather than quietly believed |
+| **LangChain & Hugging Face** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | Chain and pipeline composition, model and tokenizer integration, prompt templating, and the packaging work that moves a GenAI app out of a notebook and behind an API |
 | **Agentic Systems** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | LangGraph multi-agent pipelines (monitor / attribute / enforce) with deterministic fallbacks, plus adapter-based orchestration of CLI coding agents with checkpoint/revert and human-in-the-loop approval |
 | **Geospatial & Time-Series ML** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | ConvLSTM forecasting over 11-channel gridded feature cubes, IDW spatial interpolation on a 1 km UTM grid, DBSCAN hotspot clustering, and SHAP-explained risk classifiers |
 | **Document AI & OCR** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | PaddleOCR (CPU-only, lazily loaded) with dual 2.x/3.x driver compatibility, PyMuPDF + pdfplumber parsing, confidence-scored two-step human verification |
@@ -122,8 +124,8 @@ I ship **full stack**, because a system nobody can use is not a system: React, N
 | :--- | :---: | :--- |
 | **API & Service Architecture** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Spring Boot 3 and FastAPI services with strict layer separation — controllers hold no business logic, services never parse, parsers never perform I/O — plus DTO records, centralized exception handling, and configured CORS |
 | **Databases & Data Modeling** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | PostgreSQL with JPA/Hibernate and `asyncpg`, N+1 query elimination, DB-level uniqueness as a concurrency primitive, Alembic migrations run at container boot, PostGIS spatial indexing |
-| **Caching & Redis** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Cache-aside read paths with proactive invalidation and TTLs, atomic `INCR`/`EXPIRE` fixed-window rate limiting, and TTL-bounded multi-worker session stores — **~95% fewer read transactions** |
-| **Concurrency & Throughput** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Bounded-queue backpressure, dedicated ingestion threads feeding N-worker pools, race-condition hardening under simultaneous writes — sustaining **~50,000 events/second** on the JVM |
+| **Caching & Redis** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Cache-aside reads with proactive invalidation and TTLs, atomic `INCR`/`EXPIRE` fixed-window rate limiting, and TTL-bounded multi-worker session stores — **~95% fewer read transactions**, with an explicit fallback path when Redis is unavailable |
+| **Concurrency & Throughput** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Bounded queues that apply backpressure instead of exhausting the heap, one ingestion thread feeding N workers, and write races settled in the database rather than in application code — **~50,000 events/second** on the JVM |
 | **Authentication & Authorization** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | JWT issuance and validation, Google and GitHub OAuth, bcrypt credential storage, brute-force rate limiting in a custom `OncePerRequestFilter`, and per-service RBAC verified with real 401/403 tests |
 | **Reliability & Failure Design** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | Single-point-of-failure removal via localized cache failover to the primary datastore, deterministic fallbacks when an LLM or upstream API is unavailable, and health checks that report real loaded state |
 | **Distributed & Microservices** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | 10 independently deployable FastAPI services behind one routing front door, WebSocket relay topologies with reverse tunnels, and Hadoop HDFS/YARN/MapReduce clusters |
@@ -141,7 +143,7 @@ I ship **full stack**, because a system nobody can use is not a system: React, N
 
 <br />
 
-Built for the *"AI-Powered Urban Air Quality Intelligence for Smart City Intervention"* problem statement at the **Economic Times AI Hackathon**, where the team reached the **finals**. It fuses ground sensors, satellite products, fire detections, land use vectors, and meteorology into a **1 km gridded digital twin** of a city's airshed, then layers forecasting, source attribution, and enforcement routing on top.
+Delhi's air is a data problem before it is a health problem. Built for the *"AI-Powered Urban Air Quality Intelligence for Smart City Intervention"* statement at the **Economic Times AI Hackathon**, where the team reached the **finals**, UrbanAir Intel fuses ground sensors, satellite products, fire detections, land use vectors, and meteorology into a **1 km gridded digital twin** of a city's airshed — then puts forecasting, source attribution, and enforcement routing on top of it.
 
 | | |
 | :--- | :--- |
@@ -152,7 +154,7 @@ Built for the *"AI-Powered Urban Air Quality Intelligence for Smart City Interve
 | **Impact** | Multi-city by construction — the whole pipeline is keyed by `city_slug`, so onboarding a new city is a bounding-box entry plus a training run, not a redesign; citizen advisories generated in **English and Hindi** |
 | **Repository** | [ETA](https://github.com/madhav-gfn/ETA) *(team project — repo on a teammate's account)* · [Live Demo](https://eta-liard-nine.vercel.app) |
 
-The architectural spine is a **single shared spatial index**: `grid_cells.grid_id` with `row_idx`/`col_idx` gives the model its 2D array layout, and ingestion output, feature cubes, forecast tensors, and agent output all reference the same 1 km cell. That one decision is what makes the digital twin coherent instead of five loosely correlated datasets. On top of it sit three LangGraph agents — monitor, attribute, enforce — producing source attribution with evidence and agent-generated enforcement patrol routes rather than a dashboard that leaves interpretation to the user.
+One decision carries the whole system: **every layer shares a single spatial index**. `grid_cells.grid_id` with `row_idx`/`col_idx` gives the model its 2D array layout, and ingestion output, feature cubes, forecast tensors, and agent output all reference the same 1 km cell. Without it there is no digital twin, only five datasets that broadly agree. Three LangGraph agents — monitor, attribute, enforce — sit on top, returning attributed sources with evidence and generated enforcement patrol routes rather than a dashboard that leaves interpretation to whoever is on shift.
 
 </details>
 
@@ -161,7 +163,7 @@ The architectural spine is a **single shared spatial index**: `grid_cells.grid_i
 
 <br />
 
-A natural-language, role-gated crime analytics system for Indian law enforcement, built as **10 independently deployable FastAPI microservices** behind one conversational front door — a **finalist** at the **Zoho Catalyst Hackathon**. An investigator asks a plain-English question and the platform routes it to whichever pillar actually holds the answer.
+Ten microservices, one plain-English question box. A role-gated crime analytics system for Indian law enforcement — **finalist** at the **Zoho Catalyst Hackathon** — where an investigator types *"who is ACC-002543"* and the platform resolves which of its ten pillars holds the answer, rather than making them learn ten separate REST APIs.
 
 | | |
 | :--- | :--- |
@@ -172,7 +174,7 @@ A natural-language, role-gated crime analytics system for Indian law enforcement
 | **Impact** | Grounded in real data where it exists — IBM's AML benchmark (**5.08M real transactions**), real NCRB district-wise IPC data, and 2011 Census joins — with every risk score shipping a SHAP factor breakdown |
 | **Repository** | [crime-intelligence-platform](https://github.com/madhav-gfn/crime-intelligence-platform) *(team project — repo on a teammate's account)* |
 
-The most defensible property of this build is **honest scoping**. The research architecture called for LLMs, Whisper ASR, Kannada TTS, Graph Attention Networks, and multi-agent OSINT scraping; none of that infrastructure was available in the build environment. Rather than shipping stubs or claiming capability, every pillar implements a **real, working, deterministic substitute** with the gap documented explicitly in that service's own README. Explainability is treated as its own pillar rather than a bolt-on, which is the difference between a model an investigator can act on and a black box handed to whoever is logged in.
+The part I would defend hardest is what we **didn't** pretend to build. The research architecture called for LLMs, Whisper ASR, Kannada TTS, Graph Attention Networks, and multi-agent OSINT scraping, and none of that infrastructure existed in the build environment — no LLM key, no audio pipeline. Rather than shipping stubs behind a confident demo script, every pillar implements a **real, working, deterministic substitute**, with the gap documented in that service's own README where a judge could find it. Explainability is its own pillar rather than a bolt-on, which is the difference between a risk score an investigator can defend and a number nobody can account for.
 
 </details>
 
@@ -181,7 +183,7 @@ The most defensible property of this build is **honest scoping**. The research a
 
 <br />
 
-A heavily optimized candidate-ranking pipeline built for the **Redrob AI Hackathon** that screens **100,000 resumes against a job description in under 45 seconds on CPU**, combining baseline pruning, deep semantic context, and a behavioral conversion scorecard.
+100,000 resumes. Under 45 seconds. One CPU, no GPU. Built for the **Redrob AI Hackathon**, this pipeline ranks a full candidate corpus against a job description by pruning hard before it thinks hard — cheap heuristics first, semantic vector math only on whoever survives.
 
 | | |
 | :--- | :--- |
@@ -192,7 +194,7 @@ A heavily optimized candidate-ranking pipeline built for the **Redrob AI Hackath
 | **Impact** | Ensemble scorecard (80% core semantic + hard-skill + behavioral, 15% relevant-experience modifier, 5% location) emitting HR-readable, evidence-backed explanations rather than opaque ranks |
 | **Repository** | [Secret_saucers](https://github.com/madhav-gfn/Secret_saucers) *(team project — repo on a teammate's account)* |
 
-The pipeline was explicitly designed to escape the **keyword-matching trap**. An early substring check (`skill.lower() in jd_text.lower()`) caused catastrophic false positives — a candidate listing `"age"` matching on unrelated text — so matching moved to a word-boundary token set intersected against the JD. Semantic depth comes from appending the textual descriptions of a candidate's two most recent roles before embedding, so the vector reflects what they actually did rather than the labels they chose for themselves.
+The bug worth documenting: the first skill check was `skill.lower() in jd_text.lower()`. A candidate whose listed skill was `"age"` matched almost everything, because `"age"` sits inside *language*, *management*, and *storage* — substring matching had quietly become noise. The fix was a word-boundary token set intersected against the JD. Semantic depth came from a second decision: appending the text of a candidate's two most recent roles before embedding, so the vector reflects what they actually did rather than the job titles they chose for themselves.
 
 </details>
 
@@ -201,7 +203,7 @@ The pipeline was explicitly designed to escape the **keyword-matching trap**. An
 
 <br />
 
-A RAG service that ingests Indian employment contracts as PDFs, scanned images, or plain text, decomposes them into clauses, and evaluates each clause against the **Constitution of India (Fundamental Rights)** and the **Indian Contract Act, 1872**, streaming verdicts back per clause as they complete.
+Nobody reads their employment contract. This does. Feed it a PDF, a photo of a printed page, or raw text, and it splits the document into clauses and evaluates each one against the **Constitution of India (Fundamental Rights)** and the **Indian Contract Act, 1872**, streaming verdicts back clause by clause as they complete.
 
 | | |
 | :--- | :--- |
@@ -212,7 +214,7 @@ A RAG service that ingests Indian employment contracts as PDFs, scanned images, 
 | **Impact** | Turns an opaque legal document into an auditable, clause-level compliance report with calibrated confidence instead of a single unverifiable verdict |
 | **Repository** | [legal_clause_analyzer-be](https://github.com/varuntripathi-029/legal_clause_analyzer-be) · [legal-rag-frontend](https://github.com/varuntripathi-029/legal-rag-frontend) · [Live Demo](https://legal-rag-frontend-silk.vercel.app/) |
 
-The core engineering decision was **refusing to let latency be an API problem**. Migrating embeddings from a hosted API to CPU-local FastEmbed removed a per-request network round trip and its cost entirely, while moving inference to Groq collapsed per-clause generation time by roughly seven times. Clause analysis then runs concurrently and streams over SSE, so the interface never freezes behind a monolithic response. Ingestion was hardened against real-world failure: PaddleOCR's 3.x API break and a Windows oneDNN runtime crash are both handled by a dual-compatibility driver that negotiates the interface at runtime rather than assuming a version.
+The rewrite came from one decision: **latency was not going to stay somebody else's API problem**. Moving embeddings from a hosted endpoint to CPU-local FastEmbed removed a per-request network round trip and its cost entirely, and Groq brought per-clause generation down roughly sevenfold. Clauses then run concurrently and stream over SSE, so results render as they arrive instead of waiting on one monolithic response. Ingestion took the most hardening: PaddleOCR broke its own constructor signature in 3.x, and PaddlePaddle's oneDNN path crashes outright on Windows CPU. Both are handled by a dual-compatibility driver that negotiates the interface at runtime rather than assuming a version.
 
 </details>
 
@@ -221,7 +223,7 @@ The core engineering decision was **refusing to let latency be an API problem**.
 
 <br />
 
-Scores how **agent-ready** a website is: how easily an AI agent — not a human with eyes and a mouse — can crawl it, understand its structure, and act on it. Given a URL, it crawls the live rendered page, runs a deterministic rule engine over the DOM, scores six dimensions, and asks an LLM to narrate the findings on top of the engine — never the other way around.
+A site that looks great to a person can still be a brick wall to an agent. MX_rating scores how **agent-ready** a page is — how well software without eyes or a mouse can crawl it, parse its structure, and act on it. Give it a URL and it crawls the rendered page, runs a deterministic rule engine over the DOM, scores six dimensions, then lets an LLM narrate what the engine found. Never the reverse.
 
 | | |
 | :--- | :--- |
@@ -232,7 +234,7 @@ Scores how **agent-ready** a website is: how easily an AI agent — not a human 
 | **Impact** | Publishes a methodology that provably cannot drift from the computed score, because both are generated from the same module |
 | **Repository** | [MA_backend](https://github.com/varuntripathi-029/MA_backend) · [MA_frontend](https://github.com/varuntripathi-029/MA_frontend) · [Live Demo](https://ma-frontend-seven.vercel.app) |
 
-The architecture deliberately inverts the usual LLM-first design: a **hand-weighted, fully deterministic rubric owns the score**, and the model is only permitted to explain what the rule engine already found. Every deployment failure encountered along the way was fixed structurally rather than patched — the async Postgres driver was switched to `asyncpg` so Playwright's `ProactorEventLoop` requirement and the DB session could share one event loop, the Dockerfile now reinstalls browser binaries *after* pip resolution so runtime and image versions cannot drift, and a `docker-entrypoint.sh` runs `alembic upgrade head` so every container boot self-migrates instead of crashing against an empty schema.
+Most tools like this let the model score and then ask it to justify itself. That is backwards, so this one inverts it: a **hand-weighted deterministic rubric owns the number**, and the LLM is allowed to explain, nothing more. Getting it deployed was its own education. Playwright's async driver demands Windows' `ProactorEventLoop`, and `psycopg` flatly refuses to run under it, so the driver became `asyncpg` and the crawler and DB finally shared one loop. The Docker image kept resolving a newer Playwright than its baked-in browsers, which broke in the container and never locally; browsers now install *after* pip. Migrations never ran on deploy at all, so the API woke up to an empty schema and died. Now `docker-entrypoint.sh` runs `alembic upgrade head` on every boot.
 
 </details>
 
@@ -241,7 +243,7 @@ The architecture deliberately inverts the usual LLM-first design: a **hand-weigh
 
 <br />
 
-A full social platform: authentication, social graph, posts, events, RSVPs, and notifications on a Spring Boot backend, paired with a WebGL-accelerated React client. Built specifically to confront the failure modes that only appear under concurrency and traffic.
+Everything in this backend broke first. Auth, social graph, posts, events, RSVPs, and notifications on Spring Boot, with a WebGL-accelerated React client on top, and a changelog full of the failures that only appear once two people click at the same time.
 
 | | |
 | :--- | :--- |
@@ -252,7 +254,7 @@ A full social platform: authentication, social graph, posts, events, RSVPs, and 
 | **Impact** | Survives Redis outages by design — every cache call is wrapped in localized failover that degrades to direct PostgreSQL queries instead of cascading a 500 |
 | **Repository** | [socialmedia_be](https://github.com/varuntripathi-029/socialmedia_be) · [socialmedia_fe](https://github.com/varuntripathi-029/socialmedia_fe) · [Live Demo](https://socialmedia-fe-beta.vercel.app) |
 
-The backend reads as a catalogue of real production incidents and their resolutions. N+1 query amplification on the event feed was saturating the connection pool and starving threads, so reads moved behind a cache-aside layer. Simultaneous RSVPs from the same user were racing past service-layer duplicate checks, so integrity moved down to a database constraint with `DataIntegrityViolationException` mapped cleanly to HTTP 400. Database-logged rate limiting was itself the write amplifier, so it was replaced with atomic Redis counters and a one-hour username-to-userId cache. And because introducing a cache introduces a single point of failure, **every Redis path has an explicit PostgreSQL fallback**.
+The repository reads as an incident log. N+1 queries on the event feed saturated the connection pool and starved threads, so reads moved behind a cache-aside layer. Concurrent RSVPs from the same user walked straight past the service-layer duplicate check — two threads asking "does this row exist" at the same moment both get to answer no — so integrity moved down to a database unique constraint, with `DataIntegrityViolationException` mapped to a clean HTTP 400. Rate limiting then turned out to be the write amplifier it was meant to prevent, logging every request to a table, so it became atomic Redis counters plus a one-hour username-to-userId cache. Each fix added a dependency on Redis, which is a new way to fail, so **every Redis path has an explicit PostgreSQL fallback**. A cache should make a service faster, not more fragile.
 
 </details>
 
@@ -261,7 +263,7 @@ The backend reads as a catalogue of real production incidents and their resoluti
 
 <br />
 
-Drive CLI-based AI coding agents — Claude Code, Gemini CLI, Codex, Aider — running on a home laptop, remotely, from a phone. Three parts, one protocol: a phone client, a dumb relay, and a laptop-side agent runner.
+The laptop does the work, the phone holds the leash. DevAgent Remote drives CLI coding agents — Claude Code, Gemini CLI, Codex, Aider — running on a home machine, from wherever you happen to be. Three parts, one protocol: a phone client, a deliberately dumb relay, and a laptop-side agent runner.
 
 | | |
 | :--- | :--- |
@@ -272,7 +274,7 @@ Drive CLI-based AI coding agents — Claude Code, Gemini CLI, Codex, Aider — r
 | **Impact** | Agent-agnostic by construction — the relay never calls an LLM and contains no logic specific to any single CLI agent, so new agents plug in via an adapter |
 | **Repository** | [remote-agent](https://github.com/varuntripathi-029/remote-agent) |
 
-The defining constraint is **trust minimization**. The relay is treated as hostile infrastructure: it forwards opaque JSON between two authenticated endpoints and holds no capability of its own, which means compromising it yields routing metadata rather than code execution. On the laptop side, the agent runner owns git checkpoint and revert around every task, so an agent's changes are always reversible, and the phone client approves tool calls in-flight — keeping a human in the loop on a system explicitly designed to run unattended.
+The relay is designed as if it has already been compromised. It forwards opaque JSON between two authenticated endpoints and holds no capability of its own, so compromising it yields routing metadata rather than code execution. The laptop never opens a port either — it dials out and holds the socket, so nothing inbound is exposed on the home network. On the other end, the runner wraps every task in a git checkpoint so any change is reversible, and the phone approves tool calls in flight. A system built to run unattended still needs someone able to say no.
 
 </details>
 
@@ -281,7 +283,7 @@ The defining constraint is **trust minimization**. The relay is treated as hosti
 
 <br />
 
-A production-grade CLI log analyzer for JSON-structured logs (Logback + Logstash encoder) with a multi-threaded streaming architecture — batch processing, real-time tailing, level/keyword/service filtering, error-spike detection, and CSV time-series export.
+A CLI analyzer for JSON-structured logs (Logback + Logstash encoder) that sustains 50,000 logs/second on a single fat JAR — no Spring, no database, no cloud dependency. It runs batch, tails like `tail -f`, filters by level, keyword, or service, detects error spikes, and exports per-minute time series to CSV on the way out.
 
 | | |
 | :--- | :--- |
@@ -292,7 +294,7 @@ A production-grade CLI log analyzer for JSON-structured logs (Logback + Logstash
 | **Impact** | One-command reproducible demo (`run-demo.ps1` / `run-demo.sh`) builds, load-tests, and exports per-minute analytics in 30 seconds |
 | **Repository** | [java_logs_analyzer](https://github.com/varuntripathi-029/java_logs_analyzer) · [log-analyzer](https://github.com/varuntripathi-029/log-analyzer) · [error-log-analyzer](https://github.com/varuntripathi-029/error-log-analyzer) |
 
-Throughput here is an **architectural property, not a tuning accident**. Ingestion and processing are separated by a bounded queue so a fast source applies backpressure instead of exhausting the heap, worker count and buffer size are exposed as first-class CLI flags, and observability is built into the pipeline rather than bolted on. Shipping as a dependency-free fat JAR means the analyzer runs anywhere a JVM does — including the incident-response environments where installing a stack is not an option.
+That number is **architecture, not a lucky JVM flag**. A bounded queue sits between ingestion and processing, so a source that outruns the workers meets backpressure instead of exhausting the heap. Worker count and buffer size are CLI flags rather than constants you recompile. Throughput, queue depth, and health print every five seconds, because observability added after the fact is observability you don't have. Shipping as a dependency-free JAR matters most in the situation you would actually reach for it — an incident, where nobody is installing a stack just to read logs.
 
 </details>
 
@@ -301,7 +303,7 @@ Throughput here is an **architectural property, not a tuning accident**. Ingesti
 
 <br />
 
-Audits any public webpage by URL: the Spring Boot backend fetches and parses the HTML, and returns status, timing breakdown, content metrics, heading structure, image health, and SEO tags as JSON, rendered in a single-page client.
+Paste a URL, get a full audit. The Spring Boot backend fetches and parses the page, returning status, a fetch-versus-processing timing split, content metrics, heading structure, image health, and SEO tags as JSON, rendered in a single-page client.
 
 | | |
 | :--- | :--- |
@@ -312,7 +314,7 @@ Audits any public webpage by URL: the Spring Boot backend fetches and parses the
 | **Impact** | Ships as a **single Spring Boot jar** serving the built React app as static content — one artifact, one deploy |
 | **Repository** | [page_pulse](https://github.com/varuntripathi-029/page_pulse) |
 
-The value of this project is its **boundaries**. Each package has exactly one responsibility, which makes the parser a pure function over HTML and therefore trivially testable without a network — the discipline that keeps a codebase changeable six months later.
+A small project whose value is entirely in its **boundaries**. Each package has one responsibility, which leaves the parser a pure function over an HTML string — testable with input and expected output, no network and no mocks. Unremarkable, and still the reason the codebase stays changeable six months later.
 
 </details>
 
@@ -321,7 +323,7 @@ The value of this project is its **boundaries**. Each package has exactly one re
 
 <br />
 
-A reproducible single-node Hadoop cluster (HDFS + YARN + MapReduce) on Docker, plus a pseudo-distributed variant, for experimenting with distributed storage and compute without provisioning infrastructure.
+Hadoop's setup is where most experiments stall. This is a reproducible single-node cluster (HDFS + YARN + MapReduce) on Docker, plus a pseudo-distributed variant, so the distributed storage and compute work can start without provisioning infrastructure or hand-editing configuration files.
 
 | | |
 | :--- | :--- |
@@ -332,7 +334,7 @@ A reproducible single-node Hadoop cluster (HDFS + YARN + MapReduce) on Docker, p
 | **Impact** | ![Stars](https://img.shields.io/github/stars/varuntripathi-029/hadoop-docker-single-node?style=flat-square&color=047857&labelColor=0D1117&label=stars) — adopted as a teaching and experimentation base for distributed systems coursework |
 | **Repository** | [hadoop-docker-single-node](https://github.com/varuntripathi-029/hadoop-docker-single-node) · [hadoop-pseudo-distributed](https://github.com/varuntripathi-029/hadoop-pseudo-distributed) |
 
-Reproducibility is the entire point. Hadoop's setup burden is historically the reason distributed-systems experiments stall before they start; collapsing that into a scripted, containerized environment turns a multi-hour configuration exercise into a single command that behaves identically on every machine.
+Reproducibility is the entire point: an afternoon of configuration collapses into one command that behaves identically on every machine, and the state leaves with the container instead of persisting on the host. Judging by the stars, that setup tax was not only my problem.
 
 </details>
 
@@ -343,13 +345,13 @@ Reproducibility is the entire point. Hadoop's setup burden is historically the r
 ### Open Source Contributor · `Independent`
 `2024 — Present`
 
-Maintaining a public portfolio of production-oriented systems spanning backend architecture, applied AI/ML, and full stack delivery — each documented with the engineering trade-offs, failure modes, and resolutions behind it.
+A public body of work across backend architecture, applied AI/ML, and full stack delivery, where each repository carries the trade-offs, failure modes, and fixes that produced it — no ticket queue, and nobody else to hand a broken deploy to.
 
 **Scope of work**
 - Authored and maintain 25+ public repositories across Java, Python, and TypeScript
 - Built RAG and LLM agent systems with explicit grounding, citation validation, and evaluation methodology
-- Hardened services against concurrency races, cache failure, brute force, and ephemeral-filesystem data loss
-- Designed reproducible developer environments and one-command demos to lower the barrier for others
+- Hardened services against concurrency races, cache failure, brute force, and ephemeral filesystems that drop user uploads on redeploy
+- Designed reproducible environments and one-command demos so a reviewer can run the work, not just read it
 - Shipped containerized backends and deployed front ends end to end, owning the full release path
 
 ![Java](https://img.shields.io/badge/Java-047857?style=flat-square&labelColor=0D1117)
@@ -371,13 +373,13 @@ Maintaining a public portfolio of production-oriented systems spanning backend a
 | **Economic Times AI Hackathon — Finalist** | **Finalist** for [UrbanAir Intel](https://github.com/madhav-gfn/ETA) — a 1 km gridded air quality digital twin with ConvLSTM forecasting that beat the persistence baseline at the judged 24 h horizon |
 | **Zoho Catalyst Hackathon — Finalist** | **Finalist** for the [Crime Intelligence Platform](https://github.com/madhav-gfn/crime-intelligence-platform) — 10 FastAPI microservices deployed live on Catalyst AppSail with per-service RBAC and SHAP explainability |
 | **Redrob AI Hackathon — Participant** | Built [a candidate-ranking pipeline](https://github.com/madhav-gfn/Secret_saucers) screening 100k resumes in under 45 s on CPU, clearing all 7 hidden disqualifiers seeded in the dataset |
-| **LeetCode Knight** | Knight badge on LeetCode with **307 problems solved** — sustained contest rating in the top competitive tier |
-| **Open Source Footprint** | 25+ public repositories spanning backend, AI/ML, distributed systems, and full stack — organically starred and forked by other developers |
-| **Performance Engineering** | Delivered a ~100× embedding latency reduction and ~6–8× end-to-end analysis speedup by replacing a hosted API with CPU-local inference |
-| **Systems Throughput** | Engineered a Java streaming pipeline sustaining ~50,000 logs/second, demonstrated at 100,000 logs/second on commodity hardware |
-| **Reliability Engineering** | Eliminated ~95% of read database transactions via cache-aside architecture with full graceful degradation on cache failure |
-| **Applied AI Rigor** | Designed a citation-validated LLM pipeline where every generated claim is re-verified for existence and polarity against a deterministic profile |
-| **Developer Enablement** | Published reproducible Dockerized Hadoop environments adopted as a base for distributed systems experimentation |
+| **LeetCode Knight** | Knight badge with **307 problems solved**, at a sustained contest rating in the top competitive tier |
+| **Open Source Footprint** | 25+ public repositories across backend, AI/ML, distributed systems, and full stack — organically starred and forked by other developers |
+| **Performance Engineering** | Reduced embedding latency ~100× and end-to-end analysis ~6–8× by moving inference off a hosted API onto CPU-local models |
+| **Systems Throughput** | A Java streaming pipeline sustaining ~50,000 logs/second, demonstrated at 100,000 logs/second on commodity hardware |
+| **Reliability Engineering** | Removed ~95% of read database transactions with a cache-aside layer that degrades to PostgreSQL instead of returning 500s when Redis is down |
+| **Applied AI Rigor** | A citation-validated LLM pipeline where every claim is re-checked for existence and polarity — the model narrates, it does not decide |
+| **Developer Enablement** | Dockerized Hadoop environments other developers now use as a starting point for their own distributed systems work |
 | **Academic** | B.Tech in Electronics & Communication Engineering, Indian Institute of Information Technology, Nagpur |
 
 </div>
@@ -486,22 +488,22 @@ Maintaining a public portfolio of production-oriented systems spanning backend a
 learning:
   - Distributed systems: consensus, partitioning, and failure semantics
   - Advanced RAG: reranking, hybrid retrieval, and evaluation harnesses
-  - Kubernetes and production-grade observability pipelines
+  - Kubernetes, and observability that exists before the incident
 
 building:
-  - Agent-readiness scoring for the machine-readable web
-  - A remote control plane for CLI coding agents with reversible checkpoints
+  - Agent-readiness scoring for a web that was written for eyeballs
+  - A phone-to-laptop control plane for CLI coding agents, with reversible checkpoints
   - High-throughput streaming analytics on the JVM
 
 exploring:
-  - Grounding and hallucination control as an engineering discipline
-  - Event-driven architectures and backpressure-aware pipelines
-  - Cost-latency trade-offs between local and hosted model inference
+  - Whether "the model hallucinated" can stop being an acceptable postmortem
+  - Backpressure as a design default rather than an emergency patch
+  - Cost and latency trade-offs between local and hosted model inference
 
 open_to:
-  - Software Engineering Internships
-  - Backend and Distributed Systems roles
   - AI / ML and GenAI Engineering roles
+  - Software Engineering internships
+  - Backend and Distributed Systems roles
   - Open source collaboration
 ```
 
@@ -528,7 +530,7 @@ open_to:
 
 <div align="center">
 
-> **Systems are judged by how they fail, not by how they demo.**
+> **Every number on this page has a repository behind it. Go check.**
 
 <br />
 
