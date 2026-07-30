@@ -1,9 +1,9 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&v=2&height=230&color=0:022C22,45:064E3B,100:059669&text=Varun%20Tripathi&fontColor=ECFDF5&fontSize=54&fontAlignY=34&desc=Software%20Engineer%20%20%7C%20%20AI%20%2F%20ML%20Engineer%20%20%7C%20%20Backend%20and%20Distributed%20Systems&descAlignY=53&descSize=16&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&v=3&height=230&color=0:022C22,45:064E3B,100:059669&text=Varun%20Tripathi&fontColor=ECFDF5&fontSize=54&fontAlignY=34&desc=AI%20%2F%20ML%20Engineer%20%20%7C%20%20Software%20Engineer%20%20%7C%20%20Backend%20and%20Distributed%20Systems&descAlignY=53&descSize=16&animation=fadeIn" width="100%" />
 
 <a href="https://github.com/varuntripathi-029">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=34D399&center=true&vCenter=true&width=780&height=60&lines=Software+Engineer+%7C+AI+%2F+ML+Engineer;Backend+Systems+%E2%80%A2+Distributed+Architecture;RAG+Pipelines+%E2%80%A2+LLM+Agents+%E2%80%A2+Vector+Search;Full+Stack+Product+Engineering+at+Scale" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=34D399&center=true&vCenter=true&width=780&height=60&lines=AI+%2F+ML+Engineer+%7C+Software+Engineer;RAG+Pipelines+%E2%80%A2+LLM+Agents+%E2%80%A2+Vector+Search;Backend+Systems+%E2%80%A2+Distributed+Architecture;Full+Stack+Product+Engineering+at+Scale" alt="Typing SVG" />
 </a>
 
 <br />
@@ -15,11 +15,8 @@
 
 <br />
 
-<a href="https://github.com/varuntripathi-029/portfolio_main">
-  <img src="https://img.shields.io/badge/Portfolio-Visit-047857?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0D1117" alt="Portfolio" />
-</a>
 <a href="https://www.linkedin.com/in/varun-tripathi-bb338a295/">
-  <img src="https://img.shields.io/badge/LinkedIn-Connect-059669?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0D1117" alt="LinkedIn" />
+  <img src="https://img.shields.io/badge/LinkedIn-Connect-047857?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0D1117" alt="LinkedIn" />
 </a>
 <a href="mailto:varun.tripathi2004@gmail.com">
   <img src="https://img.shields.io/badge/Email-Reach%20Out-10B981?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0D1117" alt="Email" />
@@ -40,19 +37,19 @@
 
 ## About
 
-I am a software engineer who builds **production systems, not prototypes** — backend services that survive concurrency, AI pipelines that stay grounded in evidence, and interfaces that make both usable. My work sits at the intersection of **distributed backend engineering** and **applied AI/ML**, with a bias toward measurable outcomes: latency budgets, throughput ceilings, cache hit ratios, and failure modes that are handled rather than hoped away.
+I am an **AI/ML engineer** who treats a model as one component in a system rather than the system itself. I build retrieval-augmented pipelines end to end — document ingestion and OCR, CPU-local embeddings, FAISS vector search, streaming per-clause inference — and I hold generated output to the same standard as any other output: **every claim must cite evidence that actually exists**. In production that means citations re-validated for existence *and* polarity after generation, hybrid confidence calibrated from vector similarity and model certainty, deterministic rule engines that own the score while the LLM only narrates, and a fallback path for when the model is unavailable. I have shipped this across legal clause compliance, agent-readiness scoring for the web, ConvLSTM air quality forecasting, and LangGraph multi-agent orchestration.
 
-On the **engineering** side, I design Java 21 / Spring Boot 3 and FastAPI services backed by PostgreSQL and Redis — cache-aside read paths, atomic fixed-window rate limiting, database-level concurrency constraints, and graceful degradation when a dependency disappears. On the **AI/ML** side, I build retrieval-augmented systems end to end: local CPU embeddings, FAISS vector search, OCR-based document ingestion, streaming clause-level inference, and citation validation that treats an LLM as a narrator over a deterministic engine — never as the source of truth.
+That AI work is only deployable because of the **software engineering** underneath it. I design Java 21 / Spring Boot 3 and FastAPI services on PostgreSQL and Redis, and I optimize against numbers rather than intuition: cache-aside read paths that cut database transactions by ~95%, atomic Redis rate limiting validating in under 3 ms, database-level constraints that defeat concurrent write races, bounded-queue backpressure sustaining ~50,000 events/second on the JVM, and localized failover so a cache outage degrades a service instead of taking it down. Ten independently deployable microservices, each with its own RBAC and test suite, is a normal shape of project for me.
 
-I ship **full stack**, because a system nobody can use is not a system: React, Next.js, and TypeScript front ends deployed alongside containerized backends. And I approach every repository with a **product engineering mindset** — the roadmap, the trade-off log, the "here is exactly what broke and how it was fixed" section — because engineering judgment is only visible when the reasoning is written down.
+I ship **full stack**, because a system nobody can use is not a system: React, Next.js, and TypeScript front ends deployed alongside containerized backends on Vercel, Railway, Render, and Zoho Catalyst. And I approach every repository with a **product engineering mindset** — the roadmap, the trade-off log, the "here is exactly what broke and how it was fixed" retrospective — because engineering judgment is only visible when the reasoning is written down.
 
 <div align="center">
 
 **Open To**
 
-![Open To](https://img.shields.io/badge/Software%20Engineering%20Internships-047857?style=flat-square&labelColor=0D1117)
-![Backend](https://img.shields.io/badge/Backend%20%26%20Distributed%20Systems-059669?style=flat-square&labelColor=0D1117)
-![AI/ML](https://img.shields.io/badge/AI%20%2F%20ML%20%26%20GenAI%20Engineering-10B981?style=flat-square&labelColor=0D1117)
+![AI/ML](https://img.shields.io/badge/AI%20%2F%20ML%20%26%20GenAI%20Engineering-047857?style=flat-square&labelColor=0D1117)
+![Open To](https://img.shields.io/badge/Software%20Engineering%20Internships-059669?style=flat-square&labelColor=0D1117)
+![Backend](https://img.shields.io/badge/Backend%20%26%20Distributed%20Systems-10B981?style=flat-square&labelColor=0D1117)
 ![Full Stack](https://img.shields.io/badge/Full%20Stack%20Product%20Engineering-34D399?style=flat-square&labelColor=0D1117)
 ![Open Source](https://img.shields.io/badge/Open%20Source%20Collaboration-6EE7B7?style=flat-square&labelColor=0D1117)
 
@@ -96,26 +93,6 @@ I ship **full stack**, because a system nobody can use is not a system: React, N
 
 ---
 
-## Backend & Systems Expertise
-
-<div align="center">
-
-| Domain | Proficiency | Details |
-| :--- | :---: | :--- |
-| **API & Service Architecture** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Spring Boot 3 and FastAPI services with strict layer separation — controllers hold no business logic, services never parse, parsers never perform I/O — plus DTO records, centralized exception handling, and configured CORS |
-| **Databases & Data Modeling** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | PostgreSQL with JPA/Hibernate and `asyncpg`, N+1 query elimination, DB-level uniqueness as a concurrency primitive, Alembic migrations run at container boot, PostGIS spatial indexing |
-| **Caching & Redis** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Cache-aside read paths with proactive invalidation and TTLs, atomic `INCR`/`EXPIRE` fixed-window rate limiting, and TTL-bounded multi-worker session stores — **~95% fewer read transactions** |
-| **Concurrency & Throughput** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Bounded-queue backpressure, dedicated ingestion threads feeding N-worker pools, race-condition hardening under simultaneous writes — sustaining **~50,000 events/second** on the JVM |
-| **Authentication & Authorization** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | JWT issuance and validation, Google and GitHub OAuth, bcrypt credential storage, brute-force rate limiting in a custom `OncePerRequestFilter`, and per-service RBAC verified with real 401/403 tests |
-| **Reliability & Failure Design** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | Single-point-of-failure removal via localized cache failover to the primary datastore, deterministic fallbacks when an LLM or upstream API is unavailable, and health checks that report real loaded state |
-| **Distributed & Microservices** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | 10 independently deployable FastAPI services behind one routing front door, WebSocket relay topologies with reverse tunnels, and Hadoop HDFS/YARN/MapReduce clusters |
-| **DevOps & Deployment** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | Docker multi-stage builds and self-migrating entrypoints, GitHub Actions, and production deploys across Vercel, Railway, Render, Zoho Catalyst AppSail, Supabase, Upstash, and Neon |
-| **Testing & Code Quality** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | JUnit 5 and pytest suites (122 passing across one microservice fleet), pure-function parsers testable without a network, and documented trade-off retrospectives per repository |
-
-</div>
-
----
-
 ## AI / ML Expertise
 
 <div align="center">
@@ -132,6 +109,26 @@ I ship **full stack**, because a system nobody can use is not a system: React, N
 | **Document AI & OCR** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | PaddleOCR (CPU-only, lazily loaded) with dual 2.x/3.x driver compatibility, PyMuPDF + pdfplumber parsing, confidence-scored two-step human verification |
 | **Deterministic Rule Engines + LLM** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | Hand-weighted scoring rubrics as the single source of truth, served publicly from the same module that computes scores so methodology and output can never drift |
 | **ML Foundations** | ![Working](https://img.shields.io/badge/Working-10B981?style=flat-square&labelColor=0D1117) | Feature engineering, evaluation methodology, NumPy/Pandas tooling, and applied statistics for model and pipeline assessment |
+
+</div>
+
+---
+
+## Backend & Systems Expertise
+
+<div align="center">
+
+| Domain | Proficiency | Details |
+| :--- | :---: | :--- |
+| **API & Service Architecture** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Spring Boot 3 and FastAPI services with strict layer separation — controllers hold no business logic, services never parse, parsers never perform I/O — plus DTO records, centralized exception handling, and configured CORS |
+| **Databases & Data Modeling** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | PostgreSQL with JPA/Hibernate and `asyncpg`, N+1 query elimination, DB-level uniqueness as a concurrency primitive, Alembic migrations run at container boot, PostGIS spatial indexing |
+| **Caching & Redis** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Cache-aside read paths with proactive invalidation and TTLs, atomic `INCR`/`EXPIRE` fixed-window rate limiting, and TTL-bounded multi-worker session stores — **~95% fewer read transactions** |
+| **Concurrency & Throughput** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Bounded-queue backpressure, dedicated ingestion threads feeding N-worker pools, race-condition hardening under simultaneous writes — sustaining **~50,000 events/second** on the JVM |
+| **Authentication & Authorization** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | JWT issuance and validation, Google and GitHub OAuth, bcrypt credential storage, brute-force rate limiting in a custom `OncePerRequestFilter`, and per-service RBAC verified with real 401/403 tests |
+| **Reliability & Failure Design** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | Single-point-of-failure removal via localized cache failover to the primary datastore, deterministic fallbacks when an LLM or upstream API is unavailable, and health checks that report real loaded state |
+| **Distributed & Microservices** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | 10 independently deployable FastAPI services behind one routing front door, WebSocket relay topologies with reverse tunnels, and Hadoop HDFS/YARN/MapReduce clusters |
+| **DevOps & Deployment** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | Docker multi-stage builds and self-migrating entrypoints, GitHub Actions, and production deploys across Vercel, Railway, Render, Zoho Catalyst AppSail, Supabase, Upstash, and Neon |
+| **Testing & Code Quality** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | JUnit 5 and pytest suites (122 passing across one microservice fleet), pure-function parsers testable without a network, and documented trade-off retrospectives per repository |
 
 </div>
 
@@ -453,10 +450,10 @@ Maintaining a public portfolio of production-oriented systems spanning backend a
 
 | Language | Share | Primary Surfaces |
 | :--- | :---: | :--- |
-| **TypeScript** | ![35%](https://img.shields.io/badge/35%25-047857?style=flat-square&labelColor=0D1117) | Social platform client · MX_rating frontend · portfolio · remote-agent |
+| **TypeScript** | ![35%](https://img.shields.io/badge/35%25-047857?style=flat-square&labelColor=0D1117) | Social platform client · MX_rating frontend · UrbanAir dashboard · remote-agent |
 | **Java** | ![25%](https://img.shields.io/badge/25%25-059669?style=flat-square&labelColor=0D1117) | Spring Boot services · streaming log analyzer · Page Pulse |
 | **Python** | ![25%](https://img.shields.io/badge/25%25-10B981?style=flat-square&labelColor=0D1117) | RAG backends · FastAPI services · agent relay |
-| **JavaScript** | ![13%](https://img.shields.io/badge/13%25-34D399?style=flat-square&labelColor=0D1117) | Legal RAG frontend · portfolio sites · web clients |
+| **JavaScript** | ![13%](https://img.shields.io/badge/13%25-34D399?style=flat-square&labelColor=0D1117) | Legal RAG frontend · Page Pulse UI · web clients |
 | **Shell / Docker** | ![2%](https://img.shields.io/badge/2%25-6EE7B7?style=flat-square&labelColor=0D1117) | Hadoop environments · container entrypoints · demo automation |
 
 </div>
@@ -523,9 +520,6 @@ open_to:
 <br />
 <a href="https://github.com/varuntripathi-029">
   <img src="https://img.shields.io/badge/GitHub-varuntripathi--029-10B981?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="GitHub" />
-</a>
-<a href="https://github.com/varuntripathi-029/portfolio_main">
-  <img src="https://img.shields.io/badge/Portfolio-View%20Work-34D399?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0D1117" alt="Portfolio" />
 </a>
 
 </div>
