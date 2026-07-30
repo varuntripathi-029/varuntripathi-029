@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&v=2&height=230&color=0:022C22,45:064E3B,100:059669&text=Varun%20Tripathi&fontColor=ECFDF5&fontSize=54&fontAlignY=34&desc=Software%20Engineer%20%20%7C%20%20AI%20%2F%20ML%20Engineer%20%20%7C%20%20Backend%20%26%20Distributed%20Systems&descAlignY=53&descSize=16&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&v=2&height=230&color=0:022C22,45:064E3B,100:059669&text=Varun%20Tripathi&fontColor=ECFDF5&fontSize=54&fontAlignY=34&desc=Software%20Engineer%20%20%7C%20%20AI%20%2F%20ML%20Engineer%20%20%7C%20%20Backend%20and%20Distributed%20Systems&descAlignY=53&descSize=16&animation=fadeIn" width="100%" />
 
 <a href="https://github.com/varuntripathi-029">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1200&color=34D399&center=true&vCenter=true&width=780&height=60&lines=Software+Engineer+%7C+AI+%2F+ML+Engineer;Backend+Systems+%E2%80%A2+Distributed+Architecture;RAG+Pipelines+%E2%80%A2+LLM+Agents+%E2%80%A2+Vector+Search;Full+Stack+Product+Engineering+at+Scale" alt="Typing SVG" />
