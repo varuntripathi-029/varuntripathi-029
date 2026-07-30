@@ -95,7 +95,8 @@ I ship **full stack**, because a system nobody can use is not a system: React, N
 | **LLM Application Engineering** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Groq / Llama-3.3-70B pipelines with SSE token streaming, concurrent per-clause inference, structured output contracts, and bounded session state in Redis |
 | **Grounding & Hallucination Control** | ![Advanced](https://img.shields.io/badge/Advanced-047857?style=flat-square&labelColor=0D1117) | Every model claim must cite a real JSON path into a deterministic profile; citations re-validated post-generation for existence **and** polarity, with violations logged rather than silently trusted |
 | **LangChain & Hugging Face Ecosystem** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | Chain and pipeline composition, model and tokenizer integration, prompt templating, and deployment-oriented GenAI application structure |
-| **Agentic Systems** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | Adapter-based orchestration of CLI coding agents over a WebSocket relay, with checkpoint/revert semantics and human-in-the-loop tool approval |
+| **Agentic Systems** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | LangGraph multi-agent pipelines (monitor / attribute / enforce) with deterministic fallbacks, plus adapter-based orchestration of CLI coding agents with checkpoint/revert and human-in-the-loop approval |
+| **Geospatial & Time-Series ML** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | ConvLSTM forecasting over 11-channel gridded feature cubes, IDW spatial interpolation on a 1 km UTM grid, DBSCAN hotspot clustering, and SHAP-explained risk classifiers |
 | **Document AI & OCR** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | PaddleOCR (CPU-only, lazily loaded) with dual 2.x/3.x driver compatibility, PyMuPDF + pdfplumber parsing, confidence-scored two-step human verification |
 | **Deterministic Rule Engines + LLM** | ![Proficient](https://img.shields.io/badge/Proficient-059669?style=flat-square&labelColor=0D1117) | Hand-weighted scoring rubrics as the single source of truth, served publicly from the same module that computes scores so methodology and output can never drift |
 | **ML Foundations** | ![Working](https://img.shields.io/badge/Working-10B981?style=flat-square&labelColor=0D1117) | Feature engineering, evaluation methodology, NumPy/Pandas tooling, and applied statistics for model and pipeline assessment |
@@ -105,6 +106,66 @@ I ship **full stack**, because a system nobody can use is not a system: React, N
 ---
 
 ## Featured Projects
+
+<details>
+<summary><b>UrbanAir Intel — AI Urban Air Quality Intelligence Platform</b> · <i>ET AI Hackathon Finalist</i></summary>
+
+<br />
+
+Built for the *"AI-Powered Urban Air Quality Intelligence for Smart City Intervention"* problem statement at the **Economic Times AI Hackathon**, where the team reached the **finals**. It fuses ground sensors, satellite products, fire detections, land use vectors, and meteorology into a **1 km gridded digital twin** of a city's airshed, then layers forecasting, source attribution, and enforcement routing on top.
+
+| | |
+| :--- | :--- |
+| **Stack** | FastAPI · ConvLSTM (24 h-direct head) · LangGraph · PostGIS · APScheduler · Groq LLM · Next.js 14 · TypeScript · Docker · Railway + Supabase + Upstash + Vercel |
+| **Scale** | Five independent ingestion pullers — OpenAQ v3 (CAAQMS), NASA FIRMS, Open-Meteo, OSM Overpass, Copernicus Sentinel-5P — feeding 11-channel `(H, W, C)` feature cubes over a 1 km UTM grid across Delhi NCR |
+| **Performance** | Hyperlocal PM2.5 forecasting that **beats the persistence baseline at the judged 24 h horizon**; sensor dropouts under 3 hours gap-filled by linear interpolation in-pipeline |
+| **Security** | LLM-assisted attribution ships evidence and confidence scores with a **deterministic fallback path**, so the platform degrades to rule-based output rather than failing when the model is unavailable |
+| **Impact** | Multi-city by construction — the whole pipeline is keyed by `city_slug`, so onboarding a new city is a bounding-box entry plus a training run, not a redesign; citizen advisories generated in **English and Hindi** |
+| **Repository** | [ETA](https://github.com/madhav-gfn/ETA) *(team project — repo on a teammate's account)* · [Live Demo](https://eta-liard-nine.vercel.app) |
+
+The architectural spine is a **single shared spatial index**: `grid_cells.grid_id` with `row_idx`/`col_idx` gives the model its 2D array layout, and ingestion output, feature cubes, forecast tensors, and agent output all reference the same 1 km cell. That one decision is what makes the digital twin coherent instead of five loosely correlated datasets. On top of it sit three LangGraph agents — monitor, attribute, enforce — producing source attribution with evidence and agent-generated enforcement patrol routes rather than a dashboard that leaves interpretation to the user.
+
+</details>
+
+<details>
+<summary><b>Crime Intelligence Platform — 10-Service Conversational Analytics System</b> · <i>Zoho Catalyst Hackathon Finalist</i></summary>
+
+<br />
+
+A natural-language, role-gated crime analytics system for Indian law enforcement, built as **10 independently deployable FastAPI microservices** behind one conversational front door — a **finalist** at the **Zoho Catalyst Hackathon**. An investigator asks a plain-English question and the platform routes it to whichever pillar actually holds the answer.
+
+| | |
+| :--- | :--- |
+| **Stack** | FastAPI (10 services) · Zoho Catalyst AppSail · PostgreSQL · scikit-learn · SHAP · DBSCAN · NetworkX · Next.js · TypeScript |
+| **Scale** | **All 10 pillars live in production**, health-verified with real loaded-record counts — network analysis, pattern analytics, sociological insights, offender profiling, decision support, financial crime/AML, forecasting, explainable AI, auth/RBAC, conversational routing |
+| **Performance** | **122 tests passing** across services; multi-turn conversational context with pronoun resolution routing verified end-to-end through the real deployed service graph |
+| **Security** | **RBAC enforced inside every service, not at the platform edge** — PII-adjacent person/account endpoints gated at `INVESTIGATOR`+ across all 8 analytics services, verified with real 401/403 tests and bcrypt-hashed credentials |
+| **Impact** | Grounded in real data where it exists — IBM's AML benchmark (**5.08M real transactions**), real NCRB district-wise IPC data, and 2011 Census joins — with every risk score shipping a SHAP factor breakdown |
+| **Repository** | [crime-intelligence-platform](https://github.com/madhav-gfn/crime-intelligence-platform) *(team project — repo on a teammate's account)* |
+
+The most defensible property of this build is **honest scoping**. The research architecture called for LLMs, Whisper ASR, Kannada TTS, Graph Attention Networks, and multi-agent OSINT scraping; none of that infrastructure was available in the build environment. Rather than shipping stubs or claiming capability, every pillar implements a **real, working, deterministic substitute** with the gap documented explicitly in that service's own README. Explainability is treated as its own pillar rather than a bolt-on, which is the difference between a model an investigator can act on and a black box handed to whoever is logged in.
+
+</details>
+
+<details>
+<summary><b>Intelligent Candidate Discovery & Ranking</b> · <i>Redrob AI Hackathon</i></summary>
+
+<br />
+
+A heavily optimized candidate-ranking pipeline built for the **Redrob AI Hackathon** that screens **100,000 resumes against a job description in under 45 seconds on CPU**, combining baseline pruning, deep semantic context, and a behavioral conversion scorecard.
+
+| | |
+| :--- | :--- |
+| **Stack** | Python · `all-MiniLM-L6-v2` sentence embeddings · FAISS cosine similarity · NumPy / Pandas — CPU only, no GPU, no hosted inference |
+| **Scale** | 4-stage funnel that aggressively prunes **~96% of 100k candidates** with fast heuristics before any vector math is computed |
+| **Performance** | **< 45 s end-to-end on CPU** for the full 100k corpus, achieved by ordering the pipeline so expensive semantic operations only ever run on the surviving candidate set |
+| **Security** | Defeated all **7 hidden disqualifiers** seeded by the organizers — experience-inflation honeypots, consulting-only career blocklists, stale-activity accounts, job-hopper patterns, title keyword-stuffing, and low offer-conversion traps |
+| **Impact** | Ensemble scorecard (80% core semantic + hard-skill + behavioral, 15% relevant-experience modifier, 5% location) emitting HR-readable, evidence-backed explanations rather than opaque ranks |
+| **Repository** | [Secret_saucers](https://github.com/madhav-gfn/Secret_saucers) *(team project — repo on a teammate's account)* |
+
+The pipeline was explicitly designed to escape the **keyword-matching trap**. An early substring check (`skill.lower() in jd_text.lower()`) caused catastrophic false positives — a candidate listing `"age"` matching on unrelated text — so matching moved to a word-boundary token set intersected against the JD. Semantic depth comes from appending the textual descriptions of a candidate's two most recent roles before embedding, so the vector reflects what they actually did rather than the labels they chose for themselves.
+
+</details>
 
 <details>
 <summary><b>Legal Contract Analyzer — RAG-Powered Clause Compliance Engine</b></summary>
@@ -278,8 +339,9 @@ Maintaining a public portfolio of production-oriented systems spanning backend a
 
 | Recognition | Details |
 | :--- | :--- |
-| **ET AI Hackathon — Finalist** | Selected as a **finalist** among competing teams for an applied AI build, judged on technical depth, execution, and real-world viability |
-| **Zoho Catalyst Hackathon — Finalist** | Advanced to the **finals** building on Zoho Catalyst, delivering a working cloud-deployed product within the competition window |
+| **Economic Times AI Hackathon — Finalist** | **Finalist** for [UrbanAir Intel](https://github.com/madhav-gfn/ETA) — a 1 km gridded air quality digital twin with ConvLSTM forecasting that beat the persistence baseline at the judged 24 h horizon |
+| **Zoho Catalyst Hackathon — Finalist** | **Finalist** for the [Crime Intelligence Platform](https://github.com/madhav-gfn/crime-intelligence-platform) — 10 FastAPI microservices deployed live on Catalyst AppSail with per-service RBAC and SHAP explainability |
+| **Redrob AI Hackathon — Participant** | Built [a candidate-ranking pipeline](https://github.com/madhav-gfn/Secret_saucers) screening 100k resumes in under 45 s on CPU, clearing all 7 hidden disqualifiers seeded in the dataset |
 | **LeetCode Knight** | Knight badge on LeetCode with **307 problems solved** — sustained contest rating in the top competitive tier |
 | **Open Source Footprint** | 25+ public repositories spanning backend, AI/ML, distributed systems, and full stack — organically starred and forked by other developers |
 | **Performance Engineering** | Delivered a ~100× embedding latency reduction and ~6–8× end-to-end analysis speedup by replacing a hosted API with CPU-local inference |
