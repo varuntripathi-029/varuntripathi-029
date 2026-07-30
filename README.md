@@ -80,6 +80,18 @@ I ship **full stack**, because a system nobody can use is not a system: React, N
 
 <img src="https://skillicons.dev/icons?i=docker,aws,vercel,git,github,githubactions,maven,linux,postman,idea&theme=dark" alt="Cloud DevOps and Tooling" />
 
+**AI Agents & Local Inference**
+
+![Claude Code](https://img.shields.io/badge/Claude%20Code-047857?style=for-the-badge&logo=claude&logoColor=white&labelColor=0D1117)
+![Cursor](https://img.shields.io/badge/Cursor-059669?style=for-the-badge&logo=cursor&logoColor=white&labelColor=0D1117)
+![Antigravity](https://img.shields.io/badge/Antigravity-10B981?style=for-the-badge&logo=googlegemini&logoColor=white&labelColor=0D1117)
+![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-34D399?style=for-the-badge&logo=githubcopilot&logoColor=white&labelColor=0D1117)
+<br />
+![Ollama](https://img.shields.io/badge/Ollama-047857?style=for-the-badge&logo=ollama&logoColor=white&labelColor=0D1117)
+![LangChain](https://img.shields.io/badge/LangChain-059669?style=for-the-badge&logo=langchain&logoColor=white&labelColor=0D1117)
+![Hugging Face](https://img.shields.io/badge/Hugging%20Face-10B981?style=for-the-badge&logo=huggingface&logoColor=white&labelColor=0D1117)
+![Groq](https://img.shields.io/badge/Groq-34D399?style=for-the-badge&logo=lightning&logoColor=white&labelColor=0D1117)
+
 </div>
 
 ---
