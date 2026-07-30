@@ -536,6 +536,13 @@ open_to:
 
 > **Systems are judged by how they fail, not by how they demo.**
 
+<br />
+
+**Thanks for stopping by**
+
+<img src="https://komarev.com/ghpvc/?username=varuntripathi-029&label=Profile%20Views&color=10b981&style=for-the-badge" alt="Profile Views" />
+<img src="https://visitor-badge.laobi.icu/badge?page_id=varuntripathi-029.varuntripathi-029&left_text=Visitors&left_color=0D1117&right_color=047857" alt="Visitors" />
+
 <img src="https://capsule-render.vercel.app/api?type=waving&v=2&section=footer&height=160&color=0:059669,55:064E3B,100:022C22&fontColor=ECFDF5&animation=fadeIn" width="100%" />
 
 </div>
