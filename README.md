@@ -41,7 +41,7 @@ Ask an LLM to review a contract. It will cite a clause that does not exist.
 
 That failure mode is why I build **AI/ML** systems where the model never gets the last word. I write retrieval pipelines end to end, from OCR and document ingestion through CPU-local embeddings, FAISS vector search, and per-clause inference that streams back as each verdict completes. Generated output is then verified rather than trusted: citations are re-validated after generation for existence **and** polarity, so the cited path has to exist and the value sitting there has to actually support the claim. Confidence is calibrated from vector similarity blended with model certainty. A deterministic rule engine owns the score, and the LLM narrates what that engine already found — across legal clause compliance, agent-readiness scoring, ConvLSTM air quality forecasting, and LangGraph multi-agent orchestration.
 
-None of that ships without the unglamorous half, which is the half I actually enjoy. I design Java 21 / Spring Boot 3 and FastAPI services on PostgreSQL and Redis, tuned against measurements rather than instinct: cache-aside reads that cut database transactions by ~95%, rate limiting that resolves in under 3 ms without touching Postgres, database-level constraints that settle write races the service layer kept losing, and bounded-queue backpressure holding ~50,000 events/second on the JVM. Ten independently deployable microservices, each with its own RBAC and test suite, is a normal project shape for me. I have also watched Redis go down mid-request and the service fall through to Postgres without a 500, which is the only reason I trust a cache in the first place.
+None of that ships without the unglamorous half, which is the half I actually enjoy. The problems worth solving here don't change with the language: cache-aside reads that cut database transactions by ~95%, rate limiting that resolves in under 3 ms without touching Postgres, database-level constraints that settle write races the service layer kept losing, and bounded-queue backpressure holding ~50,000 events/second. I've built that on both sides of the fence — Spring Boot 3 on Java 21, FastAPI on Python, PostgreSQL and Redis underneath either — and the reasoning ports over intact, because a connection pool doesn't care what runtime is exhausting it. Ten independently deployable services, each with its own RBAC and test suite, is a normal project shape for me. I have also watched Redis go down mid-request and the service fall through to Postgres without a 500, which is the only reason I trust a cache in the first place.
 
 I ship **full stack**, because a system nobody can open is not a system: React, Next.js, and TypeScript front ends deployed beside containerized backends on Vercel, Railway, Render, and Zoho Catalyst. Every repository carries its own retrospective — what broke, why, and what fixed it. My worst bugs are public, and that is deliberate.
 
@@ -65,7 +65,7 @@ I ship **full stack**, because a system nobody can open is not a system: React, 
 
 **Languages**
 
-<img src="https://skillicons.dev/icons?i=java,python,ts,js,cpp,c,bash&theme=dark" alt="Languages" />
+<img src="https://skillicons.dev/icons?i=python,java,ts,js,cpp,c,bash&theme=dark" alt="Languages" />
 
 **Frontend**
 
@@ -73,7 +73,7 @@ I ship **full stack**, because a system nobody can open is not a system: React, 
 
 **Backend & Databases**
 
-<img src="https://skillicons.dev/icons?i=spring,fastapi,nodejs,express,postgres,redis,mysql,sqlite&theme=dark" alt="Backend and Databases" />
+<img src="https://skillicons.dev/icons?i=fastapi,spring,nodejs,express,postgres,redis,mysql,sqlite&theme=dark" alt="Backend and Databases" />
 
 **Cloud, DevOps & Tooling**
 
